@@ -1,0 +1,19 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+	vector<int>data;//定义一个int类型的容器,其命名为data;
+	vector<int>::iterator Iteratordata;//定义一个迭代器，其命名为Iteratordata;
+	data.insert(data.end(),20);//这是迭代器中的插入函数
+	data.insert(data.end(),50);
+	data.insert(data.end(),80);
+	Iteratordata=data.begin();
+	for(Iteratordata=data.begin();Iteratordata!=data.end();Iteratordata++){//正序输出
+		cout<<*(Iteratordata)<<endl;
+	}
+	return 0;
+}
+//说明：迭代器类似于C语言里面的指针，其作用就是指向vector容器中的某个位置。而insert是vector里面的函数，表示插入的意思，其函数形式有三种；
+//第一种是：iterator insert(iterator loc,const TYPE &val);参数的含义是：在指定位置loc前插入值为val的元素，返回指向这个元素的迭代器；
+//第二种是：void insert(iterator loc,size_type num,const TYPE &val);参数的含义是：在指定位置loc前插入num个值为val的元素；
+//第三种是: void insert(iterator loc,input_iterator start,input_iterator end);参数的含义是：在指定位置loc前插入区间[start,end)的所有元素。
